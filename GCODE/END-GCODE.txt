@@ -1,0 +1,17 @@
+;This G-code is made to prevent string that is made after printing is finished and hot end moving to finish position
+
+G4 ; wait
+
+M104 S0 ; turn off temperature
+M140 S0 ; turn off heatbed
+M106 S255 
+
+G92 E0
+G1 E-2.0000 F1800 ; retract 2mm 
+M221 S100 ; reset flow
+M900 K0 ; reset LA
+
+{if layer_z < max_print_height}G1 Z{z_offset+min(layer_z+30, max_print_height)}{endif} ; Move print head up
+G1 X0 Y200 F3000 ; home X axis
+M107 ; turn off fan
+M84 ; disable motors
