@@ -1,7 +1,10 @@
-;This is better START G-CODE for MK3s. This GCODE is made to prevent filament oozing from nozzle during heating up. 
-;With this G-CODE printer will heat up bed first, but nozzle will stop heating at 175°C, then it will home x-y axis and start mesh bed leveling and in the same starts warming up the nozzle to the desired temperature , then go outside print area and wait for nozzle temperature, and then draw a cleaning line  
 ;In Prusa Slicer go to: Printer Settings -> Custom G-code and after deleting custom start G-code paste whole from this .txt file
-;It is based on original it has function to tell printer latest fw version, orinal flowrate setting and current setting. Heating up and homing process is upgraded. 
+
+;This is better START G-code for MK3s. This GCODE is made to prevent filament oozing from nozzle during heating up. 
+;With this G-code printer will heat up bed first, but nozzle will stop heating at 175°C, 
+;then it will home x-y axis and start mesh bed leveling and in the same starts warming up the nozzle to the desired temperature
+;then go outside print area and wait for nozzle temperature, and then draw a cleaning line  
+;It is based on original start G-code it has function to tell printer latest fw version, orinal flowrate setting and current setting. Heating up and homing process is upgraded. 
 
 M862.3 P "[printer_model]" ; printer model check
 M862.1 P[nozzle_diameter] ; nozzle diameter check
