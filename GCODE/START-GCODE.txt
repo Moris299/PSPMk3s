@@ -17,8 +17,8 @@ M104 S175 ; Set extruder temp before bed level, temp 175 will avoid oozing filam
 G28 W ; home all without mesh bed level
 M190 S[first_layer_bed_temperature] ; wait for bed temp
 
-M104 S[first_layer_temperature] ; set extruder temp
 G80 ; mesh bed leveling
+M104 S[first_layer_temperature] ; set extruder temp
 G1 Y-3.0 F1000.0 ; go outside print area
 M109 S[first_layer_temperature] ; wait for extruder temp
 
